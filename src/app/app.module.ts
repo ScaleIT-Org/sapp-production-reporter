@@ -14,6 +14,9 @@ import { InventarPageModule } from '../pages/inventar/inventar.module';
 import { HttpDataProvider } from '../providers/http-data/http-data';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
+
 @NgModule({
   // somehow ionicons get busted when doing lazy loaded pages (declare HomePage here and they work)
   declarations: [ScaleITDomainApp],
@@ -26,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
 	VersandPageModule,
 	WareneingangPageModule,
 	InventarPageModule,
-    HttpClientModule
+    HttpClientModule,
+	ZXingScannerModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [ScaleITDomainApp],
