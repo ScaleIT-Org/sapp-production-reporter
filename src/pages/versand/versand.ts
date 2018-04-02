@@ -31,7 +31,7 @@ export class VersandPage {
             data: {
                 labels: ["Berlin", "München", "Karlsruhe", "Koblenz", "Dresden", "Hamburg"],
                 datasets: [{
-                    label: '# of Votes',
+                    label: '# Waren',
                     data: [12, 19, 3, 5, 2, 3],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
