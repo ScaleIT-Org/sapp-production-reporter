@@ -16,8 +16,8 @@ Production Reporter Functionality:
 2) Data Providers and Pipes
 2) Nginx Server for serving the built project (docker build only)
 
-|<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Resources/Documentation/Screen1.PNG"/> |
-<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Resources/Documentation/Screen2.PNG"/> |
+<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Resources/Documentation/Screen1.PNG"/> 
+<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Resources/Documentation/Screen2.PNG"/> 
 
 
 ## Technology Stack
@@ -64,13 +64,6 @@ Alternatively use cherry picking (or patching):
         #Build with healtcheck enabled
         HEALTHCHECK --interval=5m --timeout=3s \
         CMD curl -f http://localhost:5002/ || exit 1
-        
-## Navigation and Pages
-## Data Providers
-## Bindings (Two-Way & One-Way)
-## Pipes
-
-TODO: tutorials 
 
 ## Learning Material
 
