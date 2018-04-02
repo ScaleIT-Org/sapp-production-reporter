@@ -1,28 +1,24 @@
 <img src="https://raw.githubusercontent.com/ScaleIT-Org/media-ressources/master/logo/scaleit-logo.png" width="20%"/>
 
-# Ionic App Skeleton
+# Ionic Production Reporter App 
 
-The Ionic App Skeleton is a pre-configured base for ScaleIT Apps. It provides a ready to use production ready scaffolding for ScaleIT Ready Apps.
+The Production Reporter gives an overview of the basic production metrics. Currently, the data showed to a user are mock-ups, so further implementations related to a data collection are needed.  
 
 Give it a try:
 
     docker-compose up
     # navigate to localhost:8100
 
-Skeleton Functionality:
+Production Reporter Functionality:
 
 1) Ionic frontend with Angular
 2) Pages and Navigation
 2) Data Providers and Pipes
 2) Nginx Server for serving the built project (docker build only)
 
-| Mobile        | Desktop       |
-| ------------- | ------------- |
-| <img src="https://github.com/ScaleIT-Org/ionic-app-skeleton/blob/master/Resources/Store/Screenshots/Mobile%20Main%20Page.png?raw=true"/> | <img src="https://github.com/ScaleIT-Org/ionic-app-skeleton/blob/master/Resources/Store/Screenshots/Desktop%20Main%20Page.png?raw=true"/> |
+|<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Resources/Documentation/Screen1.PNG"/> |
+<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Resources/Documentation/Screen2.PNG"/> |
 
-|Administration view with configurable endpoints|
-| ------------- |
-| <img width="50%" src="https://github.com/ScaleIT-Org/ionic-app-skeleton/blob/master/Resources/Store/Screenshots/Administration.png?raw=true"/> |
 
 ## Technology Stack
     Node.js->(Typescript->Angular->Ionic)
@@ -38,7 +34,7 @@ Skeleton Functionality:
 
 ## Usage (Docker)
 
-This skeleton uses a multi stage build in order to create a very small production ready image. This results in an image size of about 70MB compared to the 300+MB size of the build image.
+This app uses a multi stage build in order to create a very small production ready image. This results in an image size of about 70MB compared to the 300+MB size of the build image.
 
 Docker Compose:
 
