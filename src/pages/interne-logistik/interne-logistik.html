@@ -12,48 +12,15 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-content>
-		<p *ngIf="availableDevices">
-			<label for="video-input-select">Select your camera:</label>
-			<select id="video-input-select" (change)="onDeviceSelectChange($event.target.value)">
-				<option value="" [selected]="!selectedDevice">No Device</option>
-				<option *ngFor="let device of availableDevices" [value]="device.deviceId" [selected]="selectedDevice && device.deviceId === selectedDevice.deviceId">{{ device.label }}</option>
-			</select>
-		</p>
-		 <div [hidden]="!hasCameras">
-
-			<zxing-scanner #scanner class="test-class" [scannerEnabled]="scannerEnabled" [device]="selectedDevice" (camerasFound)="displayCameras($event)"
-				(scanSuccess)="handleQrCodeResult($event)" [cssClass]="{customClass:true}"></zxing-scanner>
-
-			<h2 *ngIf="!this.selectedDevice">No camera selected.</h2>
-
-			<p>
-				<button (click)="scannerEnabled=!scannerEnabled">Toggle Scanner [{{ scannerEnabled ? 'On': 'Off' }}]</button>
-			</p>
-
-			<p>
-				Result:
-				<strong>{{ qrResultString }}</strong>
-			</p>
-
-		</div>
-
-		<div [hidden]="hasCameras">
-
-			<h1>Looks like your actual device does not have cameras, or I could not find'em. </h1>
-
-		</div>
-
-		
-	  
-    </ion-card-content>
-		
-	
-		
+    <ion-card-header>
+        Interne Logistik
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
     <ion-card-content style="height:50vh;">
     </ion-card-content>
   </ion-card>
-
 </ion-content>
 
 <ion-footer>

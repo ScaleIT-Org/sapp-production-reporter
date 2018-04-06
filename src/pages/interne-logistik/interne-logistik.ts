@@ -1,9 +1,7 @@
 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Component, VERSION, ViewChild, OnInit } from '@angular/core';
-
-import { ZXingScannerComponent } from '@zxing/ngx-scanner';
-import { Result } from '@zxing/library';
+import { Component, ViewChild } from '@angular/core';
+import { Chart } from 'chart.js'
 
 
 /**
@@ -18,64 +16,50 @@ import { Result } from '@zxing/library';
   selector: 'page-interne-logistik',
   templateUrl: 'interne-logistik.html',
 })
-export class InterneLogistikPage implements OnInit{
+export class InterneLogistikPage {
 	
-	ngVersion = VERSION.full;
-
-    @ViewChild('scanner') scanner: ZXingScannerComponent;
-
-    hasCameras = false;
-    qrResultString: string;
-    qrResult: Result;
-    scannerEnabled = true;
-
-    availableDevices: MediaDeviceInfo[];
-    selectedDevice: MediaDeviceInfo;
+	barChart: any
+	@ViewChild('barCanvas') barCanvas;
 
   constructor(
 	public navCtrl: NavController, 
 	public navParams: NavParams,
 	) {}
 	
-	ngOnInit(): void {
-		console.log('hello');
-	}
 	
+
 	ionViewDidLoad() {
-		this.scanner.camerasFound.subscribe((devices: MediaDeviceInfo[]) => {
-            this.hasCameras = true;
-
-            // selects the devices's back camera by default
-            // for (const device of devices) {
-            //     if (/back|rear|environment/gi.test(device.label)) {
-            //         this.scanner.changeDevice(device);
-            //         this.selectedDevice = device;
-            //         break;
-            //     }
-            // }
-        });
-
-        this.scanner.scanComplete.subscribe((result: Result) => {
-            this.qrResult = result;
+		this.barChart = new Chart(this.barCanvas.nativeElement, {
+ 
+            type: 'bar',
+            data: {
+                labels: ["AbteilungA", "AbteilungB", "AbteilungC"],
+                datasets: [{
+                    label: '# Waren',
+                    data: [4, 12, 7],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+ 
         });
 	}
-
-  
-
-
-    displayCameras(cameras: MediaDeviceInfo[]) {
-        console.log('Devices: ', cameras);
-        this.availableDevices = cameras;
-    }
-
-    handleQrCodeResult(resultString: string) {
-        console.log('Result: ', resultString);
-        this.qrResultString = resultString;
-    }
-
-    onDeviceSelectChange(selectedValue: string) {
-        console.log('Selection changed: ', selectedValue);
-        this.selectedDevice = this.scanner.getDeviceById(selectedValue);
-    }
-  
 }
