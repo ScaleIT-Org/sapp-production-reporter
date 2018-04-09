@@ -16,8 +16,8 @@ Production Reporter Functionality:
 2) Data Providers and Pipes
 2) Nginx Server for serving the built project (docker build only)
 
-<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Resources/Documentation/Screen1.PNG"/> 
-<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Resources/Documentation/Screen2.PNG"/> 
+<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Domain%20Software/production_reporter/Resources/Documentation/Screen1.PNG"/> 
+<img src="https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Domain%20Software/production_reporter/Resources/Documentation/Screen2.PNG"/> 
 
 
 ## Technology Stack
