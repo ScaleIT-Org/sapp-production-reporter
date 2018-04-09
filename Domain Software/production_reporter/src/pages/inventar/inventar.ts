@@ -29,7 +29,7 @@ export class InventarPage {
  
             type: 'doughnut',
             data: {
-                labels: ["Rohstoffe", "Autos", "Servers", "Skalven", "Flugzeuge", "Immobilien"],
+                labels: ["Rohstoffe", "Autos", "Servers", "Cash", "Flugzeuge", "Immobilien"],
                 datasets: [{
                     label: '# of Votes',
                     data: [12, 19, 3, 5, 2, 3],
