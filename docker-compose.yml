@@ -1,6 +1,35 @@
 version: '2'
 services:
-   scaleit-ionic-app:
+   sapp-production-reporter:
+        restart: always
+        image: scaleit-app-pool.ondics.de:5000/scaleit-app-pool/sapp-production-reporter:1.0
         build: "Domain Software/production_reporter/."
         ports:
           - "8100:80"
+   sapp-production-reporter-sidecar-registration:
+        image: scaleit-app-pool.ondics.de:5000/scaleit-app-pool/de-kit-sidecar-registration:1.0
+        environment:
+          - ETCD_IP=10.0.0.200
+          - ETCD_PORT=49501
+          - APP_PORT=51113
+          - APP_ID=sapp-production-reporter
+          - APP_NAME=sapp-production-reporter
+          - APP_TITLE=Production Reporter
+          - APP_SHORTDESCRIPTION=Visualization of production metrics
+          - APP_DESCRIPTION=
+          - APP_CATEGORY=domainApp
+          - APP_STATUS=online
+          - APP_ICON_URL=
+          - APP_USER_URL=
+          - APP_USER_DOC_URL=
+          - APP_USER_STATUS_URL=
+          - APP_DEV_DOC_URL=
+          - APP_DEV_SWAGGER_URL=
+          - APP_ADMIN_URL=
+          - APP_ADMIN_CONFIG_URL=
+          - APP_ADMIN_DOC_URL=
+          - APP_ADMIN_LOG_URL=
+          - APP_ADMIN_STATUS_URL=
+          - APP_API_ENTRYPOINT=
+          - APP_UPDATEDAT=2018-04-11T12:32:16.581Z
+          - APP_TYPE=domainApp
