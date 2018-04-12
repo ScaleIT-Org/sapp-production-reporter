@@ -1,0 +1,6 @@
+version: '2'
+services:
+   production-reporter:
+        image: scaleit-app-pool.ondics.de:5000/scaleit-app-pool/production-reporter
+        ports:
+          - "8100:80"

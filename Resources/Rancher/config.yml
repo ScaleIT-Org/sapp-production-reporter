@@ -1,0 +1,5 @@
+name: Production Reporter app 
+description: |
+  Ionic powered Domain App provides a visualization of basic production metrics 
+version: latest 
+category: sapp

@@ -1,0 +1,4 @@
+version: '2'
+catalog: 
+  name: "de-kit-production-reporter"
+  version: "0"
