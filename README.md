@@ -1,4 +1,7 @@
 <img src="https://raw.githubusercontent.com/ScaleIT-Org/media-ressources/master/logo/scaleit-logo.png" width="20%"/>
+<img src="https://github.com/ScaleIT-Org/media-ressources/raw/master/logo/scaleit-waben-ionic.png" width="15%"/>
+
+# Ionic Production Reporter ![License](https://img.shields.io/github/license/ScaleIT-Org/ionic-app-skeleton.svg?link=https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Domain%20Software/production_reporter/LICENSE)
 
 # Ionic Production Reporter App 
 
@@ -11,7 +14,7 @@ Give it a try:
 
 Production Reporter Functionality:
 
-1) Ionic frontend with Angular
+1) Ionic frontend with Angular to display different production related metrics
 2) Pages and Navigation
 2) Data Providers and Pipes
 2) Nginx Server for serving the built project (docker build only)
@@ -64,6 +67,10 @@ Alternatively use cherry picking (or patching):
         #Build with healtcheck enabled
         HEALTHCHECK --interval=5m --timeout=3s \
         CMD curl -f http://localhost:5002/ || exit 1
+        
+## Navigation and Pages 
+
+The menu bar from the [app's screenshot](https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Domain%20Software/production_reporter/Resources/Documentation/Screen1.PNG) shows the metrics for an overview. All pages are identical except the data to be shown. 
 
 ## Learning Material
 
