@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/ScaleIT-Org/media-ressources/master/logo/scaleit-logo.png" width="20%"/>
 <img src="https://github.com/ScaleIT-Org/media-ressources/raw/master/logo/scaleit-waben-ionic.png" width="15%"/>
 
-# Ionic Production Reporter ![License](https://img.shields.io/github/license/ScaleIT-Org/sapp-production-reporter.svg?link=https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/Domain%20Software/production_reporter/LICENSE)
+# Ionic Production Reporter ![License](https://img.shields.io/github/license/ScaleIT-Org/sapp-production-reporter.svg?link=https://github.com/ScaleIT-Org/sapp-production-reporter/blob/master/LICENSE)
 
 
 The Production Reporter gives an overview of the basic production metrics. Currently, the data showed to a user are mock-ups, so further implementations related to a data collection are needed.  
