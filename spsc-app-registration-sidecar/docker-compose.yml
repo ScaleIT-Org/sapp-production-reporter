@@ -1,0 +1,6 @@
+version: '2'
+services: 
+    sidecar-registration:
+        build: .
+        env_file:
+         - config.env
