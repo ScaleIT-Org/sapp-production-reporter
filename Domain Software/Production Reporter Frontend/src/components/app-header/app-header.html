@@ -1,0 +1,17 @@
+<ion-navbar class="bar-positive">
+  <ion-title>
+    <img id="app-logo" src="assets/imgs/logo.png" alt="Company Logo">
+    <font color="white"> Production Reporter: {{pageName}}</font>
+  </ion-title>
+  <ion-buttons end>
+    <button id="menu_button" ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <button ion-button icon-only>
+      <ion-icon name="person"></ion-icon>
+    </button>
+    <button ion-button icon-only (click)="openModal()">
+      <ion-icon name="information-circle" ></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>

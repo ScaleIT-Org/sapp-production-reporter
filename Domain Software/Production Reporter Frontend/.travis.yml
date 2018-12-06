@@ -1,0 +1,44 @@
+dist: trusty
+sudo: required
+language: node_js
+node_js:
+- node
+- '9'
+addons:
+  firefox: latest
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable fluxbox
+services:
+- docker
+env:
+  global:
+  - DOCKER_COMPOSE_VERSION="1.13.0"
+  - REGISTRY_USER=scaleitrobot
+  - secure: exEmWgaOEY3cBdhQlLhmISLwZlPmz7KuCE4U7DnLf2hEyoUfjk29dpW5on9dtUNa8XTdU0Ji75/CTM6FNzA6V8yykQQX5QE1aBLoeXfCVvAyIdKdpbhHf/S2vtxZvw6gaxQOYd4f1OUCVRHuereKPGlNTqNfo7l4MIBueP0OD0k0kyD1aWRgd/4TKmxB8xBoB3wkEfW9YWeWl2NwabB8LqMEdxaUZ6jekfTmg1UgOU+90flWbqNUNHYnZwSg99IDB3UNi6ZQb+8AHI6zvTkVgsEj7UP47Tz8IyL5QwW24JphgWKskeh+LLMjfHkscfugLHf/0v42MJdUMy1yqc0E0pEdApEaqb9HeWk5xhuHM9PMsvaZfxym29lYEWbGCQF+o0O6KsmblzZDcmACXb+AxXyhvrXZ/EjZNNVp2rN5fkNZu/06fsl90gtd7c4NMYANLKURcLi5hQsOUlhc5DRtvGTOprfjBXv386MOoMr9SW7wHYcbflpzPouqIRiNmTvuZk4lHG0VC7QCrEe7h8xQ55m/cC0euxM64+n/7WwJT+8Pn0Y5p2W188s9jKhnX6HIMl2p2Xr29JrddOEgNWpqF9w/rqLYRgRb259jHPFkax2CIv4o8y6o33z5M2DAnG5Ge5sB2ShAEdsqC5ZpM8ByuDEVOEx0rdlJFJfNYPc60FY=
+before_install:
+- sudo apt-get update
+install:
+- docker-compose --version
+- docker --version
+- npm install --prefix ./
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+- fluxbox >/dev/null 2>&1 &
+- docker-compose up --build -d
+script:
+- docker ps
+- npm test --prefix ./
+after_script:
+- docker-compose down
+before_deploy:
+- docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+deploy:
+  provider: script
+  script: docker push scaleit/ionic-app-skeleton
+  on:
+    branch: master

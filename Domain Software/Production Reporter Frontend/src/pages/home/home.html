@@ -1,0 +1,63 @@
+<ion-header>
+  <!-- Passing Data into the app-header component (for one way binding) -->
+
+  <app-header pageName="User Page"></app-header>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      ScaleIT App User Page
+    </ion-card-header>
+    <ion-card-content>
+      Content
+      <p>{{"upper case content pipe example 42" | metricConverter}}
+      </p>
+      <p>Today is {{ today| date:'yyyy-MM-dd HH:mm a z':'GMT+2'}} in Baden-Würrtemberg</p>
+    </ion-card-content>
+    <ion-card-content>
+      <h2 translate>demo.title</h2>
+      <!-- You might even think of translating german to german for different companies and different jargons -->
+      <button ion-button (click)="changeLanguage('de')">{{ 'demo.german' | translate }}</button>
+      <button ion-button (click)="changeLanguage('en')">{{ 'demo.english' | translate }}</button>
+    </ion-card-content>
+    <ion-card-content style="height:50vh;">
+      Local Storage example:
+      <ion-item>
+        <ion-input placeholder="Write something and I'll get remembered (even after reload)"
+                   [(ngModel)]="storedInput"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Navigation
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Uses classical html navigation -->
+      <a href="/#/admin">Jump to Administration</a>
+
+
+      <!-- Use the ionic stack for navigation (automatic back button) -->
+      <!-- Text Button -->
+      <button ion-button color="danger" [navPush]="'admin'">Push admin page onto the stack and navigate to it</button>
+
+      <!-- Style Icon Button -->
+      <button [navPush]="'admin'" ion-button icon-end>
+        Admin
+        <ion-icon name="ios-construct"></ion-icon>
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+  This is the ScaleIT Ionic App skeleton.
+  <p>
+    Built with Ionic, the
+    <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  </p>
+</ion-content>
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
